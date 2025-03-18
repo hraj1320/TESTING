@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Animated Website</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <link rel="stylesheet" href="/style.css">
+    <!-- <style>
+        /* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap');
+        body { font-family: 'Inter', sans-serif; overflow-x: hidden; }
+        .gradient-text { background: linear-gradient(45deg, #4F46E5, #EC4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .animate-ripple { animation: ripple 1s linear infinite; }
+        @keyframes ripple { 0% { transform: scale(1); opacity: 0.4; } 100% { transform: scale(1.8); opacity: 0; } } */
+    </style> -->
+</head>
+<body class="bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 text-white">
+
+<!-- Animated Background -->
+<div class="fixed inset-0 overflow-hidden opacity-20 z-0">
+    <div class="absolute w-96 h-96 bg-purple-500 rounded-full mix-blend-soft-light -top-48 -left-48 animate-pulse"></div>
+    <div class="absolute w-96 h-96 bg-blue-500 rounded-full mix-blend-soft-light -bottom-48 -right-48 animate-pulse delay-1000"></div>
+</div>
+
+<!-- Navigation -->
+<nav class="fixed w-full z-50 bg-gray-900/80 backdrop-blur-md border-b border-gray-800">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <div class="text-2xl font-bold gradient-text">TechVision</div>
+        <div class="hidden md:flex space-x-8">
+            <a href="#home" class="nav-link hover:text-blue-400">Home</a>
+            <a href="#features" class="nav-link hover:text-blue-400">Features</a>
+            <a href="#work" class="nav-link hover:text-blue-400">Work</a>
+            <a href="#contact" class="nav-link hover:text-blue-400">Contact</a>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section id="home" class="min-h-screen flex items-center justify-center relative z-10 px-4">
+    <div class="text-center max-w-4xl">
+        <h1 class="text-5xl md:text-7xl font-bold mb-6 opacity-0 translate-y-20" id="heroTitle">
+            <span class="gradient-text">Transform</span> Your Digital Presence
+        </h1>
+        <p class="text-xl md:text-2xl text-gray-300 mb-8 opacity-0 translate-y-20" id="heroSubtitle">
+            Create immersive experiences with cutting-edge web solutions
+        </p>
+        <div class="flex gap-4 justify-center">
+            <button class="cta-btn bg-blue-600 hover:bg-blue-500 text-white px-8 py-4 rounded-lg text-lg font-semibold transform transition-all duration-300 hover:scale-105">
+                Get Started
+                <span class="absolute inset-0 bg-white opacity-0 animate-ripple"></span>
+            </button>
+            <button class="border-2 border-blue-500 hover:border-blue-400 text-blue-300 hover:text-blue-200 px-8 py-4 rounded-lg transition-all duration-300 hover:scale-105">
+                Watch Demo
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section id="features" class="py-20 px-4 bg-gray-800/50 relative z-10">
+    <div class="container mx-auto">
+        <h2 class="text-4xl font-bold text-center mb-16 gradient-text">Our Features</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="feature-card bg-gray-900/50 p-8 rounded-2xl border border-gray-700 backdrop-blur-lg transform transition-all hover:scale-105">
+                <div class="text-blue-400 text-4xl mb-4">🚀</div>
+                <h3 class="text-2xl font-bold mb-4">Lightning Fast</h3>
+                <p class="text-gray-400">Optimized performance for seamless user experiences</p>
+            </div>
+            <!-- Add 2 more feature cards -->
+        </div>
+    </div>
+</section>
+
+<!-- Portfolio Section -->
+<section id="work" class="py-20 px-4 relative z-10">
+    <div class="container mx-auto">
+        <h2 class="text-4xl font-bold text-center mb-16 gradient-text">Our Work</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="portfolio-item relative overflow-hidden rounded-2xl group">
+                <img src="https://source.unsplash.com/random/800x600" alt="Project" class="w-full h-64 object-cover transform transition-all duration-500 group-hover:scale-110">
+                <div class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                    <button class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:scale-105 transition-transform">
+                        View Case Study
+                    </button>
+                </div>
+            </div>
+            <!-- Add 5 more portfolio items -->
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="py-20 px-4 bg-gray-800/50 relative z-10">
+    <div class="container mx-auto max-w-2xl">
+        <h2 class="text-4xl font-bold text-center mb-16 gradient-text">Contact Us</h2>
+        <form class="space-y-6">
+            <div>
+                <input type="text" placeholder="Your Name" class="w-full bg-gray-900/50 rounded-xl px-6 py-4 border border-gray-700 focus:border-blue-500 focus:outline-none backdrop-blur-lg">
+            </div>
+            <div>
+                <input type="email" placeholder="Email Address" class="w-full bg-gray-900/50 rounded-xl px-6 py-4 border border-gray-700 focus:border-blue-500 focus:outline-none backdrop-blur-lg">
+            </div>
+            <div>
+                <textarea rows="5" placeholder="Your Message" class="w-full bg-gray-900/50 rounded-xl px-6 py-4 border border-gray-700 focus:border-blue-500 focus:outline-none backdrop-blur-lg"></textarea>
+            </div>
+            <button class="w-full bg-blue-600 hover:bg-blue-500 text-white py-4 rounded-xl font-semibold transition-colors duration-300">
+                Send Message
+            </button>
+        </form>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-gray-900/80 backdrop-blur-lg border-t border-gray-800">
+    <div class="container mx-auto py-12 text-center text-gray-400">
+        <p>© 2024 TechVision. All rights reserved.</p>
+    </div>
+</footer>
+
+<script src="/main.js">
+    // gsap.registerPlugin(ScrollTrigger);
+
+    // // Global animations
+    // gsap.defaults({ ease: "power3.out", duration: 0.8 });
+
+    // // Hero animations
+    // gsap.to("#heroTitle", { opacity: 1, y: 0, duration: 1.2 });
+    // gsap.to("#heroSubtitle", { opacity: 1, y: 0, delay: 0.3 });
+
+    // // Section animations
+    // gsap.utils.toArray(".feature-card, .portfolio-item").forEach((el, i) => {
+    //     gsap.from(el, {
+    //         scrollTrigger: {
+    //             trigger: el,
+    //             start: "top bottom-=100",
+    //             toggleActions: "play none none reverse"
+    //         },
+    //         opacity: 0,
+    //         y: 50,
+    //         delay: i * 0.1
+    //     });
+    // });
+
+    // // Navigation animations
+    // gsap.from(".nav-link", {
+    //     opacity: 0,
+    //     y: -20,
+    //     stagger: 0.1,
+    //     delay: 0.5
+    // });
+
+    // // Interactive elements
+    // document.querySelectorAll('.cta-btn').forEach(btn => {
+    //     btn.addEventListener('mouseenter', () => {
+    //         gsap.to(btn, { 
+    //             scale: 1.05,
+    //             boxShadow: '0 0 30px rgba(59, 130, 246, 0.5)'
+    //         });
+    //     });
+        
+    //     btn.addEventListener('mouseleave', () => {
+    //         gsap.to(btn, { 
+    //             scale: 1,
+    //             boxShadow: '0 0 15px rgba(59, 130, 246, 0.3)'
+    //         });
+    //     });
+    // });
+
+    // // Smooth scroll
+    // document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    //     anchor.addEventListener('click', function(e) {
+    //         e.preventDefault();
+    //         gsap.to(window, {
+    //             duration: 1,
+    //             scrollTo: this.hash,
+    //             ease: "power3.inOut"
+    //         });
+    //     });
+    // });
+</script>
+
+</body>
+</html>
